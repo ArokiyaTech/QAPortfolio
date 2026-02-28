@@ -1,0 +1,168 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f4f6;
+  --surface: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content,
+.nav-inner,
+.footer-inner {
+  width: min(1100px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.main-content {
+  flex: 1;
+  padding-block: 2.5rem;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+.hero {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0.5rem 0 0;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+}
+
+.subtitle {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.summary {
+  margin: 1rem 0 0;
+  color: #374151;
+  max-width: 65ch;
+  line-height: 1.6;
+}
+
+.cta-row {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.btn {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background: #111827;
+  border-color: #111827;
+  color: #fff;
+}
+
+.footer {
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.footer-inner {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    height: auto;
+    padding: 0.9rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-inner {
+    height: auto;
+    padding: 0.9rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding: 1.25rem;
+  }
+}
+
